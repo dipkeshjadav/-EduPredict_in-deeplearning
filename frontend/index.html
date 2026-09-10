@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI-powered student final score prediction using an Artificial Neural Network.">
+  <title>EduPredict AI — Student Performance Predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <nav class="nav">
+    <div class="brand">
+      <div class="brand-mark">E</div>
+      <div>
+        <strong>EduPredict</strong>
+        <span>AI PERFORMANCE LAB</span>
+      </div>
+    </div>
+    <div class="nav-status"><span></span> AI model online</div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">ARTIFICIAL NEURAL NETWORK</div>
+        <h1>Predict performance.<br><em>Plan smarter.</em></h1>
+        <p>Estimate a student's final exam score from study habits, previous performance, attendance and practice results.</p>
+        <div class="hero-points">
+          <div><b>01</b><span>Enter student data</span></div>
+          <div><b>02</b><span>Run the trained ANN</span></div>
+          <div><b>03</b><span>Get an instant estimate</span></div>
+        </div>
+      </div>
+
+      <section class="predict-card">
+        <div class="card-head">
+          <div>
+            <span class="section-label">STUDENT PROFILE</span>
+            <h2>Performance inputs</h2>
+          </div>
+          <button id="demoBtn" class="ghost-btn" type="button">Use demo</button>
+        </div>
+
+        <form id="predictionForm">
+          <div class="form-grid">
+            <label>
+              <span>Study hours <small>per day</small></span>
+              <input id="study_hours" type="number" min="0" max="24" step="0.1" placeholder="e.g. 6" required>
+            </label>
+            <label>
+              <span>Previous score <small>out of 100</small></span>
+              <input id="previous_score" type="number" min="0" max="100" step="1" placeholder="e.g. 72" required>
+            </label>
+            <label>
+              <span>Attendance <small>percentage</small></span>
+              <input id="attendance" type="number" min="0" max="100" step="1" placeholder="e.g. 85" required>
+            </label>
+            <label>
+              <span>Sleep hours <small>per day</small></span>
+              <input id="sleep_hours" type="number" min="0" max="24" step="0.1" placeholder="e.g. 7" required>
+            </label>
+            <label>
+              <span>Assignments <small>completed</small></span>
+              <input id="assignments_completed" type="number" min="0" step="1" placeholder="e.g. 8" required>
+            </label>
+            <label>
+              <span>Practice score <small>out of 100</small></span>
+              <input id="practice_test_score" type="number" min="0" max="100" step="1" placeholder="e.g. 75" required>
+            </label>
+          </div>
+
+          <button class="predict-btn" id="predictBtn" type="submit">
+            <span>Predict final score</span>
+            <span class="arrow">→</span>
+          </button>
+        </form>
+
+        <div id="result" class="result hidden">
+          <div class="result-top">
+            <div>
+              <span class="section-label">AI ESTIMATE</span>
+              <h3>Predicted final score</h3>
+            </div>
+            <div class="score-ring">
+              <span id="score">--</span><small>/100</small>
+            </div>
+          </div>
+          <div class="meter"><div id="meterFill"></div></div>
+          <div class="result-bottom">
+            <p id="message"></p>
+            <button id="againBtn" type="button" class="again-btn">Predict again</button>
+          </div>
+        </div>
+
+        <p id="error" class="error"></p>
+      </section>
+    </section>
+
+    <section class="info-section">
+      <div class="info-card">
+        <span class="section-label">HOW IT WORKS</span>
+        <h2>From student data to an AI estimate</h2>
+        <p>The application standardizes the six inputs, sends them to a trained Artificial Neural Network, and converts the model output into a score from 0–100.</p>
+      </div>
+      <div class="metric-card"><strong>6</strong><span>Input factors</span></div>
+      <div class="metric-card"><strong>ANN</strong><span>Prediction engine</span></div>
+      <div class="metric-card"><strong>⚡</strong><span>Instant response</span></div>
+    </section>
+
+    <section class="disclaimer">
+      <span>ⓘ</span>
+      <p>This is an educational AI prediction tool. Predictions are estimates from the training data and should not be used as the sole basis for academic decisions.</p>
+    </section>
+  </main>
+
+  <footer>EduPredict AI <span>•</span> Student Performance Predictor</footer>
+  <script src="/static/script.js"></script>
+</body>
+</html>
